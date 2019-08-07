@@ -2269,14 +2269,14 @@ counter to RFC 2822, there's no separating newline here
 
     def test_email_hang(self):
         text = """From: user@host.com
-        To: user@host.com
-        Bad-Header:
-            =?us-ascii?Q?LCSwrV11+IB0rSbSker+M9vWR7wEDSuGqmHD89Gt=ea0nJFSaiz4vX3XMJPT4vrE?=
-            =?us-ascii?Q?xGUZeOnp0o22pLBB7CYLH74Js=wOlK6Tfru2U47qR?=
-            =?us-ascii?Q?72OfyEY2p2=2FrA9xNFyvH+fBTCmazxwzF8nGkK6D?=
-        
-        Hello!
-        """
+To: user@host.com
+Bad-Header:
+    =?us-ascii?Q?LCSwrV11+IB0rSbSker+M9vWR7wEDSuGqmHD89Gt=ea0nJFSaiz4vX3XMJPT4vrE?=
+    =?us-ascii?Q?xGUZeOnp0o22pLBB7CYLH74Js=wOlK6Tfru2U47qR?=
+    =?us-ascii?Q?72OfyEY2p2=2FrA9xNFyvH+fBTCmazxwzF8nGkK6D?=
+
+Hello!
+"""
         eml = email.message_from_string(text, policy=email.policy.SMTPUTF8)
         eml.as_string()
         
