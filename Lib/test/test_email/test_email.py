@@ -2277,7 +2277,6 @@ counter to RFC 2822, there's no separating newline here
         
         Hello!
         """
-
         eml = email.message_from_string(text, policy=email.policy.SMTPUTF8)
         eml.as_string()
         
